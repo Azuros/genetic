@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-Parser::Parser(): popullationSize(100), maxSimulationSteps(250), hiddenLayerSize(7), laserSize(5), visualization(1), iterationGeneration(1000), weightInitialization(1.0), mutationRate(0.1), extinctionRate(0.2)
+Parser::Parser(): popullationSize(100), maxSimulationSteps(250), hiddenLayerSize(7), laserSize(5), visualization(1), iterationGeneration(1000), weightInitialization(1.0), mutationRate(0.1), extinctionRate(0.2), showHelp(false)
 {
 
 }

@@ -17,7 +17,9 @@ private:
     double laserMaxRange;
     double fitness;
     double linearVelocity;
+    double linearMaxVelocity;
     double angularVelocity;
+    double angularMaxVelocity;
     bool isCollidied;
     std::vector<Eigen::Vector2d> lasers;
     std::vector<double> lasersDistance;

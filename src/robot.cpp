@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-Robot::Robot(const size_t laserSize, const Network &network):pose(Eigen::Affine2d::Identity()), radius(0.125), laserMaxRange(3.0), isCollidied(false), currentCheckpointIndex(0), network(network)
+Robot::Robot(const size_t laserSize, const Network &network):pose(Eigen::Affine2d::Identity()), radius(0.125), laserMaxRange(3.0), linearVelocity(0.0), linearMaxVelocity(1.0), angularVelocity(0.0), angularMaxVelocity(0.75), isCollidied(false), currentCheckpointIndex(0), network(network)
 {
     this->initLasers(laserSize);
 }
@@ -215,6 +215,9 @@ bool Robot::collidied() const
 void Robot::selectAction()
 {
     this->network.getAction(this->lasersDistance, this->linearVelocity, this->angularVelocity);
+
+    this->linearVelocity *= linearMaxVelocity;
+    this->angularVelocity *= angularMaxVelocity;
 }
 
 size_t Robot::getCurrentCheckpointIndex() const

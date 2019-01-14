@@ -74,7 +74,7 @@ void Settings::printSettings() const
               << "number of hidden layer neurons: " << this->hiddenLayerSize << "\n"
               << "laser size: " << this->laserSize << "\n"
               << "weight initialization: " << this->weightInitialization << "\n"
-              << "percent chance for one mutation" << this->mutationRate << "\n"
+              << "percent chance for one mutation: " << this->mutationRate << "\n"
               << "percent of the extinction: " << this->extinctionRate << "\n"
               << "output data name: " << this->outputName << "\n"
               << std::endl;

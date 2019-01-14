@@ -170,7 +170,7 @@ bool Parser::parse(const int argc, const char **argv)
         {
             i++;
 
-            if(!isInRange(i, numberOfArguments) || !parseDouble(argv[i], this->extinctionRate))
+            if(!isInRange(i, numberOfArguments) || !parseDouble(argv[i], this->weightInitialization))
             {
                 this->errorValue("-w", i);
                 return false;
@@ -236,7 +236,7 @@ bool Parser::checkSettings() const
         successful = false;
     }
 
-    if(!(3 == this->laserSize || 5 == this->laserSize || 7 == this->laserSize || 9 == this->laserSize || 11 == this->laserSize))
+    if(!(3 == this->laserSize || 5 == this->laserSize || 7 == this->laserSize || 9 == this->laserSize || 11 == this->laserSize || 13 == this->laserSize))
     {
         std::cerr << "ERROR: In '-l' got " << this->laserSize << " must in range [3,5,7,9,11]!" << std::endl;
         successful = false;
@@ -269,18 +269,18 @@ void Parser::printHelp() const
 {
     std::cout << "*** Help ***\n"
               << "usage: genetic [<argument> <value>]\n"
-              << " arg    type     range     default     description\n"
-              << " '-h'                                show this\n"
-              << " '-i'  Integer  [1,  inf]   1000     iteration of generation\n"
-              << " '-v'  Integer  [0,  inf]      1     visualition at every iteration\n"
-              << " '-p'  Integer  [10, inf]    100     popullation size\n"
-              << " '-s'  Integer  [50, inf]    250     max number of simulation step\n"
-              << " '-n'  Integer  [2,  inf]      7     number of hidden layer neurons\n"
-              << " '-l'  Integer  [3,5,7,9,11]   5     laser size\n"
-              << " '-w'   Float   [0.1, inf]     1.0   weight initialization\n"
-              << " '-m'   Float   [0.0, 1.0]     0.1   percent chance for one mutation\n"
-              << " '-e'   Float   [0.0, 1.0]     0.2   percent of the extinction\n"
-              << " '-o'  String                        output data name\n"
+              << " arg    type     range        default     description\n"
+              << " '-h'                                   show this\n"
+              << " '-i'  Integer  [1,  inf]      1000     iteration of generation\n"
+              << " '-v'  Integer  [0,  inf]         1     visualition at every iteration\n"
+              << " '-p'  Integer  [10, inf]       100     popullation size\n"
+              << " '-s'  Integer  [50, inf]       250     max number of simulation step\n"
+              << " '-n'  Integer  [2,  inf]         7     number of hidden layer neurons\n"
+              << " '-l'  Integer  [3,5,7,9,11,13]   5     laser size\n"
+              << " '-w'   Float   [0.1, inf]        1.0   weight initialization\n"
+              << " '-m'   Float   [0.0, 1.0]        0.1   percent chance for one mutation\n"
+              << " '-e'   Float   [0.0, 1.0]        0.2   percent of the extinction\n"
+              << " '-o'  String                           output data name\n"
               << std::endl;
 }
 

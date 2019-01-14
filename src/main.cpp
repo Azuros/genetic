@@ -16,6 +16,11 @@ int main(const int argc, const char **argv)
         return -1;
     }
 
+    if (parser.getShowHelp()) {
+        parser.printHelp();
+        return  0;
+    }
+
     if (!parser.checkSettings()) {
         parser.printHelp();
         std::cerr << "ERROR: Failure by checking the settings!" << std::endl;

@@ -11,6 +11,8 @@ optional
 * gnuplot-x11 (visualization)
 * OpenMP
 
+## Installation
+
 Install all requirements
 ```
 sudo apt install cmake build-essential git libomp-dev gnuplot-x11 libeigen3-dev 

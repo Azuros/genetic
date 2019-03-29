@@ -44,3 +44,11 @@ Execute the program.
 ```
 ./genetic
 ```
+
+## Parameters
+
+Show help for parameter information
+```
+./genetic -h
+```
+
